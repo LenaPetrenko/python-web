@@ -12,3 +12,10 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+from sys import argv
+text = argv[1:]
+text = ''.join(text)
+with open(text, 'r') as file:
+    for line in file:
+        if line.find('!') is -1:
+            print(line.strip('\n'))

@@ -20,3 +20,13 @@
 """
 
 ip = "192.168.3.1"
+work_ip = ip.split('.')
+ip = '''
+ {0:<10} {1:<10} {2:<10} {3:<10}
+ {0:09b}  {1:09b}  {2:09b}  {3:09b}
+ '''
+okt1 = int(work_ip[0])
+okt2 = int(work_ip[1])
+okt3 = int(work_ip[2])
+okt4 = int(work_ip[3])
+print(ip.format(okt1, okt2, okt3, okt4))

@@ -24,6 +24,7 @@ $ python task_5_1c.py
 То есть эту задачу можно решить без использования условия if.
 """
 
+name = (input('Введите имя устройства: '))
 london_co = {
     "r1": {
         "location": "21 New Globe Walk",
@@ -49,3 +50,8 @@ london_co = {
         "routing": True,
     },
 }
+
+list_params = ', '.join(sorted(london_co[name]))
+param = input('Введите имя параметра ({}): '.format(list_params))
+print(london_co[name].get(param,'Такого параметра нет'))
+

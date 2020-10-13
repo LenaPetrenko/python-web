@@ -10,6 +10,9 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 То есть эту задачу можно решить без использования условия if и циклов for/while.
 """
+mode = (input('Введите режим работы интерфейса (access/trunk): '))
+typy_and_num = (input('Введите тип и номер интерфейса: '))
+
 
 access_template = [
     "switchport mode access",
@@ -24,3 +27,11 @@ trunk_template = [
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+vlan_num = input({ 'access':'Введите номер VLAN: ', 'trunk': 'Введите разрешенные VLANы: '}[mode])
+config_template = {'access':access_template, 'trunk':trunk_template}[mode]
+config_template = '\n'.join(config_template) 
+
+
+print('interface {}'.format(typy_and_num))
+print(config_template.format(vlan_num))
